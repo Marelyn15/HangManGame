@@ -1,68 +1,15 @@
 import random
-
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-word_list = ["apple", "orange", "camel","excel"]
-chosen_word = random.choice(word_list)
+import stagesHangManGame as stages   
+import listOfWordsHangManGame as words
+#word_list = ["apple", "orange", "camel","excel"]
+chosen_word = random.choice(words.word_list)
 
 
 #Testing code
-print(f'Pssst, the solution is {chosen_word}.')
+#print(f'Pssst, the solution is {chosen_word}.')
+#A hint
+print(f'Pssst, this is a hit the word has a {chosen_word[1]}.')
+
 
 #The blank spaces will be saved in all_words and new_all_words for validation
 all_words = [] 
@@ -74,7 +21,8 @@ for i in chosen_word:
 
 
 #How many life You have
-number_times = len(chosen_word)
+#number_times = len(chosen_word)
+number_times = 6
 
 while number_times > 0:
 
@@ -100,7 +48,7 @@ while number_times > 0:
         #And the new list gonna keep without change
         new_all_words = new_all_words
         #print(new_all_words)
-        print(stages[number_times])
+        print(stages.stages[number_times])
 
     #If both lists are not the same then
     else:
