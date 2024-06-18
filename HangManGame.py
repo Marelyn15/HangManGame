@@ -1,4 +1,62 @@
 import random
+
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 word_list = ["apple", "orange", "camel","excel"]
 chosen_word = random.choice(word_list)
 
@@ -37,11 +95,13 @@ while number_times > 0:
 
     #If both list are the same
     if new_all_words == all_words:
-        #You gonna loss a life
+        #You gonna lose a life
         number_times -= 1
         #And the new list gonna keep without change
         new_all_words = new_all_words
         #print(new_all_words)
+        print(stages[number_times])
+
     #If both lists are not the same then
     else:
         #You gonna update the new list
@@ -54,7 +114,7 @@ while number_times > 0:
 
     
 
-#If you lost all you life then
+#If you lose all you life then
 if '_' in all_words:
     print('You lose')
 #if you break the algorithm
